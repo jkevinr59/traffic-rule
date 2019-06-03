@@ -3,8 +3,27 @@ guid: eecbf11b076c4e442a0452b64224a137
 timeCreated: 1558092064
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName: {}
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Body
+    100002: Front_steer
+    100004: Rear_wheel
+    100006: //RootNode
+    400000: Body
+    400002: Front_steer
+    400004: Rear_wheel
+    400006: //RootNode
+    2300000: Body
+    2300002: Front_steer
+    2300004: Rear_wheel
+    3300000: Body
+    3300002: Front_steer
+    3300004: Rear_wheel
+    4300000: Rear_wheel
+    4300002: Front_steer
+    4300004: Body
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -27,6 +46,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -34,7 +54,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -50,6 +73,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
