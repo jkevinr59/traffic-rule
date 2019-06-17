@@ -7,10 +7,10 @@ public class autoMove : MonoBehaviour {
 
     private GameObject thisObject;
     // Use this for initialization
-    public float moveX;
+    private float moveX;
     private float moveY;
     private float moveZ;
-    private float turnLeftRightVelocity = 0.1f;
+    private float turnLeftRightVelocity = 0.05f;
     public float maxSpeedX;
     public float maxSpeedY;
     public float maxSpeedZ;
@@ -100,23 +100,23 @@ public class autoMove : MonoBehaviour {
     }
     private void goBrake() {
         
-        if (Mathf.Abs(moveX) > Mathf.Abs(brakeX))
+        if (Mathf.Abs(moveZ) > Mathf.Abs(brakeZ))
         {
-            moveX -= brakeX;
+            moveZ -= brakeZ;
         }
     }
     private void goLeft()
     {
-        this.moveZ -= this.turnLeftRightVelocity;
+        this.moveX -= this.turnLeftRightVelocity;
     }
 
     private void goRight()
     {
 
-        this.moveZ += this.turnLeftRightVelocity;
+        this.moveX += this.turnLeftRightVelocity;
     }
     private void goNeutralForward() {
-        this.moveZ = 0;
+        this.moveX = 0;
     }
 
  
