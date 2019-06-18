@@ -10,7 +10,7 @@ public class autoMove : MonoBehaviour {
     private float moveX;
     private float moveY;
     private float moveZ;
-    private float turnLeftRightVelocity = 0.05f;
+    private float turnLeftRightVelocity = 0.1f;
     public float maxSpeedX;
     public float maxSpeedY;
     public float maxSpeedZ;
@@ -66,7 +66,16 @@ public class autoMove : MonoBehaviour {
 	}
 
     public Vector3 getPlayerVector() {
-        return new Vector3(3 * moveX, 3 * moveY, 0);
+        if (isStopped)
+        {
+            return new Vector3(0, 0, 0);
+        }
+        else {
+
+            return new Vector3(3 * moveZ, 3 * moveY, 0);
+        }
+        
+        
     }
 
     private bool doBrake() {
@@ -119,5 +128,20 @@ public class autoMove : MonoBehaviour {
         this.moveX = 0;
     }
 
+    public int GetSpeed() {
+
+        if (!isStopped)
+        {
+            float rawSpeed = this.moveZ;
+            float speedModifier = 40f / 0.3f;
+            float playerSpeed = this.moveZ * speedModifier;
+
+            return Mathf.RoundToInt(playerSpeed);
+
+        }
+        else {
+            return 0;
+        }   
+    }
  
 }

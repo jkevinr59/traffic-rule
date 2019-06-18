@@ -37,4 +37,9 @@ public class MainController : MonoBehaviour {
             SceneManager.LoadScene("TemplateMode1", LoadSceneMode.Single);
         }
     }
+
+    public void BackToMenu() {
+
+        SceneManager.LoadScene("scene/MainTitle", LoadSceneMode.Single);
+    }
 }
