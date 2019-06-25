@@ -17,8 +17,13 @@ public class TrafficLight : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") {
+
+            GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+            StageOneController stageController = gameController.GetComponent<StageOneController>();
+            stageController.Scoring();
             autoMove moveComponent = other.gameObject.GetComponent<autoMove>();
             moveComponent.isStopped = true;
+            Time.timeScale = 0;
         }
        
     }

@@ -22,24 +22,30 @@ public class MainController : MonoBehaviour {
     }
 
     public void startGame() {
-
+        
         Debug.Log("We Do start");
         SaveDataController saveController = this.gameObject.GetComponent<SaveDataController>();
         
         if (saveController.LoadSaveData()) {
 
-            SceneManager.LoadScene("TemplateMode1", LoadSceneMode.Single);
+            SceneManager.LoadScene("scene/StageSelect", LoadSceneMode.Single);
             
         }
         else
         {
             saveController.GenerateNewSave();
-            SceneManager.LoadScene("TemplateMode1", LoadSceneMode.Single);
+            SceneManager.LoadScene("scene/StageSelect", LoadSceneMode.Single);
         }
     }
 
     public void BackToMenu() {
 
-        SceneManager.LoadScene("scene/MainTitle", LoadSceneMode.Single);
+        SceneManager.LoadScene("scene/StageOneSelect", LoadSceneMode.Single);
+    }
+
+    public void BackToStageTwo()
+    {
+
+        SceneManager.LoadScene("scene/StageOneSelect", LoadSceneMode.Single);
     }
 }

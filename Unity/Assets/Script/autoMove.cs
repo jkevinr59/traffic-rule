@@ -32,6 +32,8 @@ public class autoMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Time.timeScale == 0) return;
         if (doBrake())
         {
             goBrake();
@@ -59,7 +61,7 @@ public class autoMove : MonoBehaviour {
             goLeft();
         }
         Vector3 moveVector = new Vector3(moveX,moveY,moveZ);
-        if (isStopped == false) {
+        if (isStopped == false && Time.timeScale > 0 ) {
             thisObject.transform.Translate(moveVector);
         }
         
